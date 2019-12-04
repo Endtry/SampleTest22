@@ -8,11 +8,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  data: any = {};
+  myData: any = {};
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
+    const data = JSON.parse(localStorage.getItem('data'));
+    this.myData = data;
   }
 
 }
